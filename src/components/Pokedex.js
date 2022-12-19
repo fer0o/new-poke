@@ -1,4 +1,5 @@
 import React from 'react'
+import Pokemon from './Pokemon'
 
 const Pokedex = props => {
   const { pokemons } = props
@@ -10,9 +11,7 @@ const Pokedex = props => {
       </div>
       <div className='grid grid-cols-3 gap-4'>
         {pokemons.map((pokemon, idx) => (
-          <div key={pokemon.name}>
-            #{idx + 1}: {pokemon.name}
-          </div>
+          <Pokemon pokemon={pokemon} key={pokemon.name} />
         ))}
       </div>
     </div>
