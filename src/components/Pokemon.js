@@ -6,7 +6,7 @@ const Pokemon = props => {
   return (
     <div>
       {/* container */}
-      <div className='grid grid-cols-4 border-2 border-black rounded-md shadow-xl '>
+      <div className='grid grid-cols-2 lg:grid-cols-4 border-2 border-black rounded-md shadow-2xl '>
         {/* imagen container */}
         <div className=' col-span-1 '>
           <img
@@ -16,7 +16,7 @@ const Pokemon = props => {
           />
         </div>
         <div className='col-span-3'>
-          <div className='flex justify-between m-4 capitalize text-xl'>
+          <div className='flex justify-between m-4 capitalize text-xl '>
             <h1 className='font-bold'>{pokemon.name}</h1>
             <p className='text-gray-500'># {pokemon.id}</p>
           </div>
@@ -25,12 +25,12 @@ const Pokemon = props => {
               {pokemon.types.map((type, idx) => (
                 <h3
                   key={idx}
-                  className='border-2 border-black p-2 w-full text-center bg-cyan-300 rounded-3xl font-bold'
+                  className='border-2 border-black p-2 mt-4 w-40 text-center bg-cyan-300 rounded-3xl font-bold'
                 >
                   {type.type.name}
                 </h3>
               ))}
-              <h3 className='text-4xl text-red-600'>❤</h3>
+              <h3 className='text-4xl text-blue-700 m-2'>❤</h3>
             </div>
           </div>
         </div>
