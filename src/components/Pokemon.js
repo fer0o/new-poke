@@ -1,18 +1,30 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import Favorites from '../context/Favorites'
 
 const Pokemon = props => {
+  // corazones
+  const redHeart = '🧡'
+  const blackHeart = '🖤'
   const { pokemon } = props
+  const { favoritePokemons, updateFavoritePokemons } = useContext(Favorites)
+  const heart = favoritePokemons.includes(pokemon.name) ? redHeart : blackHeart
   //console.log(pokemon)
+
+  //funcion clikc corazon
+  const clickHeart = e => {
+    e.preventDefault()
+    updateFavoritePokemons(pokemon.name)
+  }
   return (
     <div>
       {/* container */}
       <div className='grid grid-cols-2 lg:grid-cols-4 border-2 border-black rounded-md shadow-2xl '>
         {/* imagen container */}
-        <div className=' col-span-1 '>
+        <div className='lg:col-span-1 col-span-2 '>
           <img
             src={pokemon.sprites.front_default}
             alt={pokemon.name}
-            className='w-32 h-32'
+            className='w-40 h-40 mx-auto'
           />
         </div>
         <div className='col-span-3'>
@@ -30,7 +42,12 @@ const Pokemon = props => {
                   {type.type.name}
                 </h3>
               ))}
-              <h3 className='text-4xl text-blue-700 m-2'>❤</h3>
+              <button
+                className='text-2xl p-1 border-2 rounded-lg m-2 bg-slate-100'
+                onClick={clickHeart}
+              >
+                {heart}
+              </button>
             </div>
           </div>
         </div>

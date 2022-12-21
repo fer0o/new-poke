@@ -4,9 +4,9 @@ const Pagination = props => {
   const { onLeftClick, onRightClick, page, totalPages } = props
   return (
     <div>
-      <div className='flex flex-row space-x-4 items-center '>
+      <div className='flex flex-row lg:space-x-4 space-x-2 items-center '>
         <button
-          className='border border-black pb-6 p-5  rounded-full bg-blue-500'
+          className='border border-black lg:pb-6 pb-3 lg:p-5 p-2  rounded-full bg-blue-500'
           onClick={onLeftClick}
         >
           <span>👈</span>
@@ -15,7 +15,7 @@ const Pagination = props => {
           {page} de {totalPages}
         </h3>
         <button
-          className='border border-black pb-6 p-5 rounded-full bg-blue-500'
+          className='border border-black lg:pb-6 pb-3 lg:p-5 p-2 rounded-full bg-blue-500'
           onClick={onRightClick}
         >
           <span>👉</span>
